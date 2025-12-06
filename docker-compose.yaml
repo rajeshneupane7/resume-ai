@@ -10,11 +10,12 @@ services:
     build: ./backend
     container_name: backend
     volumes:
-    - ./output:/home/node/app/output
+      - ./output:/home/node/app/output
     environment:
-    - CORS_ORIGIN=http://localhost:8080
-    - LLM_URL=http://host.docker.internal:11434/api/generate
-    - MODEL_NAME=gemma3:1b
-    - PORT=5001
+      - CORS_ORIGIN=http://localhost:8080
+      - LLM_URL=http://host.docker.internal:11434/api/generate
+      - MODEL_NAME=llama3.2:latest
+      - PORT=5001
     ports:
-    - 5001:5001
+      - 5001:5001
+
